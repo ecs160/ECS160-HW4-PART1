@@ -12,7 +12,7 @@ do{                               \
   return 0;                       \
 } while(0)
 
-//define macro to print out invalid format
+//macro to print out invalid format
 
 typedef struct tweeter{
   char* name;
