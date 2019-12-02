@@ -221,15 +221,14 @@ int main(int argc, char const *argv[]){
 
       for(int i=0; i <=line_len; ++i){
         current_char = line[i];
-
-        if(current_char != ',' && i != line_len){
+        if(current_char != ',' && i != line_len ){
           //remove new line at the end of every line
           if(current_char == '\n' && i == line_len-1){
             continue;
-          }else if(i == line_len -1 && current_char != '\n' && line_len == MAX_CHARS){
-            //line overflow
-            printf("LINE OVERFLOW\n");
-            invalid_error();
+          }else if(i == line_len-1 && current_char != '\n' && line_len == MAX_CHARS){
+              //line overflow
+              printf("LINE OVERFLOW");
+              invalid_error();
           }
           cells[num_words][num_chars] = current_char;
           ++num_chars;
@@ -284,6 +283,9 @@ int main(int argc, char const *argv[]){
           invalid_error(); //macro
         }
 
+
+
+
         //check if tweeter is already in list add it if not
         check_for_tweeter(&num_tweeters, tweeter_name);
 
@@ -293,6 +295,7 @@ int main(int argc, char const *argv[]){
         //clear up cells
         clear_up_cells(num_words);
     }
+
 
   }
 
